@@ -56,7 +56,7 @@ void FSOLIDCreateCutExtrude::GetUGInfo()
 		cout << "Through All" << endl;
 	}else{
 		_StaType = End_Dimension;
-		_dStart = -(extrudeBuilder->Limits()->StartExtend()->Value()->Value());	// set _dStart
+		_dStart = extrudeBuilder->Limits()->StartExtend()->Value()->Value();	// set _dStart
 		cout << "Blind" << endl;
 		cout << "Start Value: " << _dStart << endl;
 	} 

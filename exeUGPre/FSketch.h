@@ -17,7 +17,7 @@ public:
 	void	 GetSketInfo(double csys[12]) {for(int i=0; i<12 ; i++) csys[i] = _sketInfo[i];}
 	Point3D	GetOrigin(void) {return Point3D(_sketInfo[9], _sketInfo[10], _sketInfo[11]);}
 	Direct3D GetX(void){return Direct3D(_sketInfo[0], _sketInfo[1], _sketInfo[2]);}
-	Direct3D GetY(void){return Direct3D( _sketInfo[3], _sketInfo[4], _sketInfo[5]);}
+	Direct3D GetY(void){return Direct3D(_sketInfo[3], _sketInfo[4], _sketInfo[5]);}
 	Direct3D GetZ(void){return Direct3D(_sketInfo[6], _sketInfo[7], _sketInfo[8]);}
 
 	Feature * GetCLine(void);
