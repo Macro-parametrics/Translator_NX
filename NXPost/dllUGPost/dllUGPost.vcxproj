@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5E9EA508-BE91-4201-9404-918EA789969A}</ProjectGuid>
+    <RootNamespace>dllUGPost</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SECURE_SCL=0;_USRDLL;UGPOST_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(UGII_BASE_DIR)\ugopen;$(UGII_BASE_DIR)\ugii;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX64</TargetMachine>
+      <OutputFile>$(OutDir)/dllUGPost.dll</OutputFile>
+      <ImportLibrary>$(OutDir)/dllUGPost.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(UGII_BASE_DIR)\ugopen;$(UGII_BASE_DIR)\UGII;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libufun.lib;libnxopencpp.lib;libnxopencpp_features.lib;libnxopencpp_geometricutilities.lib;libnxopencpp_geometricanalysis.lib;libnxopencpp_preferences.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SECURE_SCL=0;_USRDLL;UGPOST_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(UGII_BASE_DIR)\ugopen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <TargetMachine>MachineX64</TargetMachine>
+      <OutputFile>$(OutDir)/dllUGPost.dll</OutputFile>
+      <ImportLibrary>$(OutDir)/dllUGPost.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(UGII_BASE_DIR)\ugopen;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libufun.lib;libnxopencpp.lib;libnxopencpp_features.lib;libnxopencpp_geometricutilities.lib;libnxopencpp_geometricanalysis.lib;libnxopencpp_preferences.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Definition.cpp" />
+    <ClCompile Include="dllUGPost.cpp" />
+    <ClCompile Include="FDatumPlane.cpp" />
+    <ClCompile Include="FDatumPlaneOffset.cpp" />
+    <ClCompile Include="Feature.cpp" />
+    <ClCompile Include="FeatureSOLIDCreateChamfer.cpp" />
+    <ClCompile Include="FeatureSOLIDCreateCounterbored.cpp" />
+    <ClCompile Include="FeatureSOLIDCreateCountersunk.cpp" />
+    <ClCompile Include="FeatureSOLIDCreateCutExtrude.cpp" />
+    <ClCompile Include="FeatureSOLIDCreateCutRevolve.cpp" />
+    <ClCompile Include="FeatureSOLIDCreateFilletConstant.cpp" />
+    <ClCompile Include="FeatureSOLIDCreateLoft.cpp" />
+    <ClCompile Include="FeatureSOLIDCreatePatternCircular.cpp" />
+    <ClCompile Include="FeatureSOLIDCreatePatternRectangular.cpp" />
+    <ClCompile Include="FeatureSOLIDCreateProtrusionExtrude.cpp" />
+    <ClCompile Include="FeatureSOLIDCreateProtrusionRevolve.cpp" />
+    <ClCompile Include="FeatureSOLIDCreateProtrusionSweep.cpp" />
+    <ClCompile Include="FSketch.cpp" />
+    <ClCompile Include="MP_Utility.cpp" />
+    <ClCompile Include="Part.cpp" />
+    <ClCompile Include="SKETCHCreate2DCenterline.cpp" />
+    <ClCompile Include="SKETCHCreate2DCircleCenterPoint.cpp" />
+    <ClCompile Include="SKETCHCreate2DCircularArc.cpp" />
+    <ClCompile Include="SKETCHCreate2DLine2Points.cpp" />
+    <ClCompile Include="SKETCHItem.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="UGReferenceManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Definition.h" />
+    <ClInclude Include="dllUGPost.h" />
+    <ClInclude Include="FDatumPlane.h" />
+    <ClInclude Include="FDatumPlaneOffset.h" />
+    <ClInclude Include="Feature.h" />
+    <ClInclude Include="FeatureSOLIDCreateChamfer.h" />
+    <ClInclude Include="FeatureSOLIDCreateCounterbored.h" />
+    <ClInclude Include="FeatureSOLIDCreateCountersunk.h" />
+    <ClInclude Include="FeatureSOLIDCreateCutExtrude.h" />
+    <ClInclude Include="FeatureSOLIDCreateCutRevolve.h" />
+    <ClInclude Include="FeatureSOLIDCreateFilletConstant.h" />
+    <ClInclude Include="FeatureSOLIDCreateLoft.h" />
+    <ClInclude Include="FeatureSOLIDCreatePatternCircular.h" />
+    <ClInclude Include="FeatureSOLIDCreatePatternRectangular.h" />
+    <ClInclude Include="FeatureSOLIDCreateProtrusionExtrude.h" />
+    <ClInclude Include="FeatureSOLIDCreateProtrusionRevolve.h" />
+    <ClInclude Include="FeatureSOLIDCreateProtrusionSweep.h" />
+    <ClInclude Include="FSketch.h" />
+    <ClInclude Include="MP_Utility.h" />
+    <ClInclude Include="Part.h" />
+    <ClInclude Include="PN_TYPE.h" />
+    <ClInclude Include="SKETCHCreate2DCenterline.h" />
+    <ClInclude Include="SKETCHCreate2DCircleCenterPoint.h" />
+    <ClInclude Include="SKETCHCreate2DCircularArc.h" />
+    <ClInclude Include="SKETCHCreate2DLine2Points.h" />
+    <ClInclude Include="SKETCHItem.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="UGReferenceManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

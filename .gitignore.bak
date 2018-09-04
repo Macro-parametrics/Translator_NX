@@ -1,8 +1,0 @@
-# solution files
-*.sdf
-*.suo
-
-# folder during build time
-x64/
-exeUGPre/Debug/
-exeUGPre/x64/

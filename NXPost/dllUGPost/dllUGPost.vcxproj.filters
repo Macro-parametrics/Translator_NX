@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Part">
+      <UniqueIdentifier>{ebccb74a-a80c-480d-af3f-91c32d0efedf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Part\Features">
+      <UniqueIdentifier>{8165f310-60e3-44c4-8be7-1a71495c3a29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Part\Reference">
+      <UniqueIdentifier>{4ca8924b-bbe1-4037-b93a-5dbb4a7b6306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Part\SketchFeatures">
+      <UniqueIdentifier>{e6fcf815-5fa5-4a0b-afeb-204f8cb348b1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllUGPost.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Definition.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Part.cpp">
+      <Filter>Part</Filter>
+    </ClCompile>
+    <ClCompile Include="Feature.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="FDatumPlane.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="UGReferenceManager.cpp">
+      <Filter>Part\Reference</Filter>
+    </ClCompile>
+    <ClCompile Include="MP_Utility.cpp">
+      <Filter>Part\Reference</Filter>
+    </ClCompile>
+    <ClCompile Include="FSketch.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="SKETCHItem.cpp">
+      <Filter>Part\SketchFeatures</Filter>
+    </ClCompile>
+    <ClCompile Include="SKETCHCreate2DLine2Points.cpp">
+      <Filter>Part\SketchFeatures</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreateProtrusionExtrude.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="SKETCHCreate2DCircleCenterPoint.cpp">
+      <Filter>Part\SketchFeatures</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreateCutExtrude.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreateFilletConstant.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="FDatumPlaneOffset.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="SKETCHCreate2DCircularArc.cpp">
+      <Filter>Part\SketchFeatures</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreateProtrusionRevolve.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="SKETCHCreate2DCenterline.cpp">
+      <Filter>Part\SketchFeatures</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreateChamfer.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreateCutRevolve.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreatePatternRectangular.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreatePatternCircular.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreateCounterbored.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreateCountersunk.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreateLoft.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="FeatureSOLIDCreateProtrusionSweep.cpp">
+      <Filter>Part\Features</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dllUGPost.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Definition.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Part.h">
+      <Filter>Part</Filter>
+    </ClInclude>
+    <ClInclude Include="Feature.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="FDatumPlane.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="UGReferenceManager.h">
+      <Filter>Part\Reference</Filter>
+    </ClInclude>
+    <ClInclude Include="MP_Utility.h">
+      <Filter>Part\Reference</Filter>
+    </ClInclude>
+    <ClInclude Include="PN_TYPE.h">
+      <Filter>Part\Reference</Filter>
+    </ClInclude>
+    <ClInclude Include="FSketch.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="SKETCHItem.h">
+      <Filter>Part\SketchFeatures</Filter>
+    </ClInclude>
+    <ClInclude Include="SKETCHCreate2DLine2Points.h">
+      <Filter>Part\SketchFeatures</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreateProtrusionExtrude.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="SKETCHCreate2DCircleCenterPoint.h">
+      <Filter>Part\SketchFeatures</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreateCutExtrude.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreateFilletConstant.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="FDatumPlaneOffset.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="SKETCHCreate2DCircularArc.h">
+      <Filter>Part\SketchFeatures</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreateProtrusionRevolve.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="SKETCHCreate2DCenterline.h">
+      <Filter>Part\SketchFeatures</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreateChamfer.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreateCutRevolve.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreatePatternRectangular.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreatePatternCircular.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreateCounterbored.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreateCountersunk.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreateLoft.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="FeatureSOLIDCreateProtrusionSweep.h">
+      <Filter>Part\Features</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>

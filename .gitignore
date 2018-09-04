@@ -3,7 +3,21 @@
 *.suo
 
 # folder during build time
-x64/
-exeUGPre/Debug/
-exeUGPre/x64/
-exeUGPre/*.cd
+NXPre/x64/
+NXPre/exeUGPre/Debug/
+NXPre/exeUGPre/Release/
+NXPre/exeUGPre/x64/
+NXPre/exeUGPre/*.cd
+
+NXPost/Debug/
+NXPost/dllUGPost/Debug/
+NXPost/dllUGPost/Release/
+NXPost/dllUGPost/x64/
+NXPost/dllUGPost/*.cd
+
+NXPost/UGTranslator_MFC/Debug/
+NXPost/UGTranslator_MFC/Release/
+NXPost/UGTranslator_MFC/x64/
+
+NXPost/Debug/
+NXPost/Release/
