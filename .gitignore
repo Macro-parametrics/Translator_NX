@@ -3,21 +3,24 @@
 *.suo
 
 # folder during build time
-NXPre/x64/
-NXPre/exeUGPre/Debug/
-NXPre/exeUGPre/Release/
-NXPre/exeUGPre/x64/
-NXPre/exeUGPre/*.cd
+PART/NX_Part_Pre/x64/
+PART/NX_Part_Pre/exeUGPre/Debug/
+PART/NX_Part_Pre/exeUGPre/Release/
+PART/NX_Part_Pre/exeUGPre/x64/
+PART/NX_Part_Pre/exeUGPre/*.cd
 
-NXPost/Debug/
-NXPost/dllUGPost/Debug/
-NXPost/dllUGPost/Release/
-NXPost/dllUGPost/x64/
-NXPost/dllUGPost/*.cd
+PART/NX_Part_Post/Debug/
+PART/NX_Part_Post/dllUGPost/Debug/
+PART/NX_Part_Post/dllUGPost/Release/
+PART/NX_Part_Post/dllUGPost/x64/
+PART/NX_Part_Post/dllUGPost/*.cd
 
-NXPost/UGTranslator_MFC/Debug/
-NXPost/UGTranslator_MFC/Release/
-NXPost/UGTranslator_MFC/x64/
+PART/NX_Part_Post/UGTranslator_MFC/Debug/
+PART/NX_Part_Post/UGTranslator_MFC/Release/
+PART/NX_Part_Post/UGTranslator_MFC/x64/
 
-NXPost/Debug/
-NXPost/Release/
+PART/NX_Part_Post/Debug/
+PART/NX_Part_Post/Release/
+
+ASSEMBLY/NX_Assem_Pre/ConsoleApplication2/obj/
+ASSEMBLY/NX_Assem_Pre/ConsoleApplication2/bin/
