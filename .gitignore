@@ -24,3 +24,4 @@ PART/NX_Part_Post/Release/
 
 ASSEMBLY/NX_Assem_Pre/ConsoleApplication2/obj/
 ASSEMBLY/NX_Assem_Pre/ConsoleApplication2/bin/
+*.cache
