@@ -8,7 +8,7 @@ namespace NX_Code_Macro
 {
     class NewNXfile
     {
-        public static string A1_PostFileLocation ;//= "D:\\Macro\\A1post\\";
+        public static string A1_PostFileLocation;//= "D:\\Macro\\A1post\\";
         public static string rootAssemFileName = "A1";
         public static string fileExtension = ".prt";
         public static string x;
@@ -21,6 +21,10 @@ namespace NX_Code_Macro
         {
             return x = A1_PostFileLocation + rootAssemFileName + fileExtension;
 
+        }
+        public string partDir(string partName)
+        {
+            return x = A1_PostFileLocation + partName + fileExtension;
         }
 
         public string subassemdir(string y)
@@ -50,7 +54,7 @@ namespace NX_Code_Macro
             nxRootCompFile.NewFileName = name;
             nxRootCompFile.MasterFileName = "";
             nxRootCompFile.MakeDisplayedPart = true;
-         
+
 
         }
 

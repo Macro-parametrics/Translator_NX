@@ -14,7 +14,7 @@ using NXOpen.UF;
 namespace ConsoleApplication2
 {
     class Program
-    {
+    {//D:\UG_MACRO\CODE\GitHub_NXTranslator_Team\ASSEMBLY\NX_Assem_Pre\TestModels\A1\
         private static NXOpen.Session nxSession;
         private static NXOpen.UF.UFSession ufSession;
 
@@ -56,16 +56,22 @@ namespace ConsoleApplication2
                     }
 
                     //Coaxial
+                    /*
                     if (nxConstraintRefGeoms[0].GetUsesGeometryAxis() && nxConstraintRefGeoms[1].GetUsesGeometryAxis())
                     {
                         preConstraints.Add(new CONSTRAINTCoaxial(nxConstraint, assemManager));
                     }
-
+                    */
                     //Incidence??
                     else
                     {
                         preConstraints.Add(new CONSTRAINTIncidence(nxConstraint, assemManager));
                     }
+                }
+                    //coaxial-edge-based-fit-Constraint in NX
+                else if (constraintType == Constraint.Type.Fit)
+                {
+                    preConstraints.Add(new CONSTRAINTCoaxial(nxConstraint, assemManager));
                 }
 
                 else if (constraintType == Constraint.Type.Fix)
@@ -92,6 +98,8 @@ namespace ConsoleApplication2
                 preConstraints[i].toTransCAD();
             }
             assemManager.UninitializeTransCAD();
+
+            
         }
     }  
 }

@@ -23,7 +23,7 @@ namespace NX_Code_Macro
 
         static void Main(string[] args)
         {
-            
+
 
             System.Console.WriteLine("parameter count = {0}", args.Length);
 
@@ -32,17 +32,16 @@ namespace NX_Code_Macro
             var fileDir = new NewNXfile(); //Contains File Directory Infromation
 
             fileDir.initiatefl(args[0]);
-            nxSession = Session.GetSession();
-            
-            
-            AssemManager.InitializeTransCAD();           
-            AssemManager.loadAssemblyInfo();
 
+            AssemManager.InitializeTransCAD();
+            AssemManager.loadAssemblyInfo();
+            nxSession = Session.GetSession();
             AssemManager.FromTransCAD(nxSession);
-            //nxSession = Session.GetSession();
+
+            // AssemManager.FindtheEdgeName(nxSession);
             AssemManager.NXRootFile(nxSession, fileDir);
             AssemManager.ToNXFile(nxSession);
-            //AssemManager.Comparison();
+
        }
     }
 

@@ -24,4 +24,14 @@ PART/NX_Part_Post/Release/
 
 ASSEMBLY/NX_Assem_Pre/ConsoleApplication2/obj/
 ASSEMBLY/NX_Assem_Pre/ConsoleApplication2/bin/
-*.cache
+
+ASSEMBLY/NX_Assem_Post/*.dgml
+ASSEMBLY/NX_Assem_Post/*.sequencediagram
+ASSEMBLY/NX_Assem_Post/*.layout
+ASSEMBLY/NX_Assem_Post/*.dgml
+ASSEMBLY/NX_Assem_Post/ModelingProject1/
+ASSEMBLY/NX_Assem_Post/NX_Code_Macro/obj/
+ASSEMBLY/NX_Assem_Post/NX_Code_Macro/bin/
+ASSEMBLY/NX_Assem_Post/TestModels/SubAssembly1.prt
+ASSEMBLY/NX_Assem_Post/TestModels/A01.prt
+*.cd

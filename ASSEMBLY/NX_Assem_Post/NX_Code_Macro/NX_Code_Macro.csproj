@@ -122,13 +122,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="angCons.cs" />
     <Compile Include="Assembly.cs" />
-    <Compile Include="CoaxialConstraintClass.cs" />
+    <Compile Include="ConstData.cs" />
     <Compile Include="ConstraintClass.cs" />
+    <Compile Include="ConstraintHandler.cs" />
+    <Compile Include="disCons.cs" />
+    <Compile Include="fitCons.cs" />
+    <Compile Include="fixCons.cs" />
     <Compile Include="GeometricNames.cs" />
     <Compile Include="NewNXfile.cs" />
+    <Compile Include="NXPartFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="touchCons.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

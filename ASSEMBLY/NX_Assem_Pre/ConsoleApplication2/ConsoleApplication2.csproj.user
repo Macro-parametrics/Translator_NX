@@ -11,6 +11,6 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <StartArguments>D:\UG_MACRO\CODE\GitHub_NXTranslator\ASSEMBLY\TestModels\A1\A1.prt</StartArguments>
+    <StartArguments>D:\UG_MACRO\CODE\GitHub_NXTranslator_Team\ASSEMBLY\NX_Assem_Pre\TestModels\A1\A1.prt</StartArguments>
   </PropertyGroup>
 </Project>

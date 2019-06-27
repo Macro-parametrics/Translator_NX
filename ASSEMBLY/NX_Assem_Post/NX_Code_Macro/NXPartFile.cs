@@ -18,29 +18,31 @@ namespace NX_Code_Macro
         private static Body[] pBody;
         private static Face[] facenameid;
         private static Edge[] tempedgeid, edgeid;
-        private static Point3d[] FaceEdgeVrtx, UFaceEdgeVrtx;
+        private static Point3d[] FaceEdgeVrtx, UFaceEdgeVrtx, EdgeVrtx;
 
-        private static Matrix3x3[] OldPartOrntn ;
+        private static Matrix3x3[] OldPartOrntn;
 
         private static ComponentPositioner nxPositioner;
         private static Constraint[] nxConstraints;
 
-        private static int lenBody, lenFace, lenEdge, lenVertx, numofFacesint, numofFacesint1,h;
-        private static string[] componentname, facename;
-   
+        private static int lenBody, lenFace, lenEdge, lenVertx, numofFacesint, numofFacesint1, h, e1;
+        private static string[] componentname, facename, edgenames;
+
 
         Dictionary<string, int> NumOfBodz = new Dictionary<string, int>();
-  
+
         Dictionary<int, string> FeatureNames = new Dictionary<int, string>();
-
+        Dictionary<int, string> EdgeNames = new Dictionary<int, string>();
+        Dictionary<int, Point3d[]> EdgeVrtxInt = new Dictionary<int, Point3d[]>();
         Dictionary<int, Point3d[]> PartVrtxInt = new Dictionary<int, Point3d[]>();
-        Dictionary<Point3d[], string> PartCFace = new Dictionary<Point3d[], string>();
+        Dictionary<Point3d[], string> VrtxFaceName = new Dictionary<Point3d[], string>();
         Dictionary<string, string[]> Feature2FaceNames = new Dictionary<string, string[]>();
-
+        Dictionary<string, string[]> Feature2EdgeNames = new Dictionary<string, string[]>();
         #endregion
 
         public void FileLoad(Session nxSession, string FileDirectory)
         {
+
             Stpfile = nxSession.Parts.OpenDisplay(FileDirectory, out partloadstatus);
             Stpfile = nxSession.Parts.Work;
             //Stpfile.CoordinateSystems.CreateCoordinateSystem(
@@ -50,14 +52,32 @@ namespace NX_Code_Macro
             pBody = tempbody.ToArray();
             lenBody = pBody.Length;
             NXOpen.Features.Feature[] tempfeature;
-            NumOfBodz.Add(FileDirectory, lenBody);
+            NumOfBodz.Add(FileDirectory, lenBody);//= new string[100];
+            e1 = 0;
             h = 0;
             for (int y = 0; y < lenBody; y++)
             {
                 facenameid = pBody[y].GetFaces();
                 tempfeature = pBody[y].GetFeatures();
                 string[] featurenames = new string[tempfeature.Length];
-                
+                Edge[] edgesinbody = pBody[y].GetEdges();
+                EdgeVrtx = new Point3d[2];
+                edgenames = new string[edgesinbody.Length];
+                for (int r = 0; r < edgesinbody.Length; r++)
+                {
+                    EdgeVrtx = new Point3d[2];
+                    edgenames[r] = edgesinbody[r].JournalIdentifier.ToString();
+                    Point3d a, b;
+                    edgesinbody[r].GetVertices(out a, out b);
+                    Point3d[] tempEdgeVrtx = new Point3d[2];
+                    tempEdgeVrtx[0] = a;
+                    tempEdgeVrtx[1] = b;
+                    EdgeVrtx = tempEdgeVrtx.Distinct().ToArray();
+                    EdgeVrtxInt.Add(e1, EdgeVrtx);
+                    EdgeNames.Add(e1, edgenames[r]);
+                    e1++;
+                }
+
                 lenFace = facenameid.Length;
                 facename = new string[lenFace];
                 for (int x = 0; x < lenFace; x++)
@@ -84,8 +104,7 @@ namespace NX_Code_Macro
                     UFaceEdgeVrtx = FaceEdgeVrtx.Distinct().ToArray();
                     PartVrtxInt.Add(h, UFaceEdgeVrtx);
                     h++;
-                    PartCFace.Add(UFaceEdgeVrtx, facename[x]);
-                   
+                    VrtxFaceName.Add(UFaceEdgeVrtx, facename[x]);
                 }
                 for (int f = 0; f < tempfeature.Length; f++)
                 {
@@ -93,16 +112,20 @@ namespace NX_Code_Macro
                 }
                 FeatureNames.Add(y, featurenames[0]);
                 Feature2FaceNames.Add(featurenames[0], facename);
-
+                Feature2EdgeNames.Add(featurenames[0], edgenames);
             }
             NXOpen.PartCloseResponses partCloseResponse1;
             partCloseResponse1 = nxSession.Parts.NewPartCloseResponses();
             Stpfile.Close(BasePart.CloseWholeTree.False, NXOpen.BasePart.CloseModified.UseResponses, partCloseResponse1);
             Console.WriteLine("It works");
         }
-        public int NumOfAtribs()
+        public int NumOfFaces()
         {
             return h;
+        }
+        public int NumOfEdges()
+        {
+            return e1;
         }
         public int BodzinPart(string partname)
         {
@@ -118,16 +141,31 @@ namespace NX_Code_Macro
         {
             return Feature2FaceNames[y];
         }
-        public string nxName(Point3d[] x)
+        public string[] EdgeinFeature(string y)
+        {
+            return Feature2EdgeNames[y];
+        }
+        public string FaceName(Point3d[] x)
         {
             string y;
-            y = PartCFace[x];
+            y = VrtxFaceName[x];
             return y;
         }
-        public Point3d[] FVrtM(int constraintfacevrtx)
+        public Point3d[] FaceVrtx(int c)
         {
-            Point3d[] x3d = PartVrtxInt[constraintfacevrtx];
-            return x3d;
+            Point3d[] d = PartVrtxInt[c];
+            return d;
+        }
+        public string EdgeName(int x)
+        {
+            string y;
+            y = EdgeNames[x];
+            return y;
+        }
+        public Point3d[] EdgeMVrtx(int c)
+        {
+            Point3d[] d = EdgeVrtxInt[c];
+            return d;
         }
     }
 }

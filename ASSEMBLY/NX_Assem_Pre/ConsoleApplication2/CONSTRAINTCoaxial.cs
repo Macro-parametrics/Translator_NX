@@ -21,9 +21,11 @@ namespace ConsoleApplication2
         {
             for (int i = 0; i < nx_RefGeoms.Length; i++)
             {
-                if (nx_RefGeoms[i].ToString().Contains("Edge"))
+                if (nx_RefGeoms[i].ToString().Contains("Face"))                
                 {
-                    Edge circularEdge = (Edge)nx_RefGeoms[i];
+                    Face tempconst = (Face)nx_RefGeoms[i];
+                    Edge[] circularedges = tempconst.GetEdges();
+                    Edge circularEdge = circularedges[0];
                     Edge.EdgeType edgeType = circularEdge.SolidEdgeType;
                     Point3d a, b;
                     circularEdge.GetVertices(out a, out b); //a, b are same since circular edge starts and ends at same position
